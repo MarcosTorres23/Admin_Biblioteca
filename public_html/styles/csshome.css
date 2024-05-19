@@ -1,0 +1,209 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 7 may 2024, 17:19:51
+    Author     : User
+*/
+
+/* Estilos generales */
+h1 {
+   
+  font-family: 'comic sans ms';
+  color: #14396A !important;
+  font-size: 14px;
+  text-shadow: 1px 2px 1px #DEA7C8;
+  transform: translatex(45%);
+ 
+    
+}
+body {
+    background-image: url(images/bg5.jpg);
+    background-size: cover;
+  /* Evita que la imagen se repita */
+    background-repeat: no-repeat;
+  /* Ajusta la altura del elemento para que sea igual a la del viewport */
+     height: 100vh;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap");
+
+svg {
+	font-family: "Rufina", sans-serif;
+	width: 100%; height: 100%;
+        
+        
+   
+
+}
+svg text {
+	animation: stroke 8s infinite alternate;
+	stroke-width: 1;
+	stroke: #CD8719;
+	font-size: 53px;
+}
+@keyframes stroke {
+	0%   {
+		fill: rgba(144,85,8,0); stroke: rgba(205,135,25,1);
+		stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+	}
+	70%  {fill: rgba(144,85,8,0); stroke: rgba(205,135,25,1); }
+	80%  {fill: rgba(144,85,8,0); stroke: rgba(205,135,25,1); stroke-width: 3; }
+	100% {
+		fill: rgba(144,85,8,1); stroke: rgba(205,135,25,0);
+		stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+	}
+}
+.wrapper {};
+
+/*/////////menu///////*/
+#menu {
+	background: #FFFEFE;
+	height: 64px;
+	border-radius: 0px;
+}
+#menu ul, #menu li {
+	margin: 0 auto;
+	padding: 0;
+	list-style: none
+}
+#menu ul {
+	width: 100%;
+	text-align: center;
+}
+#menu li {
+	display: inline-block;
+	position: relative;
+}
+#menu a {
+	display: block;
+	line-height: 64px;
+	padding: 0 14px;
+	text-decoration: none;
+	color: #565195;
+	font-size: 17px;
+}
+#menu a.dropdown-arrow:after {
+	content: "\23F7";
+	margin-left: 5px;
+}
+#menu li a:hover {
+	color: #190E46;
+	background: #F2D4AC;
+}
+#menu input {
+	display: none;
+	margin: 0;
+	padding: 0;
+	height: 64px;
+	width: 100%;
+	opacity: 0;
+	cursor: pointer
+}
+#menu label {
+	display: none;
+	line-height: 64px;
+	text-align: center;
+	position: absolute;
+	left: 35px
+}
+#menu label:before {
+	font-size: 1.6em;
+	color: #565195;
+	content: "\2261"; 
+	margin-left: 20px;
+}
+#menu ul.sub-menus{
+	height: auto;
+	overflow: hidden;
+	width: 170px;
+	background: #B9863A;
+	position: absolute;
+	z-index: 99;
+	display: none;
+}
+#menu ul.sub-menus li {
+	display: block;
+	text-align: left;
+	width: 100%;
+}
+#menu ul.sub-menus a {
+	color: #FFFFFF;
+	font-size: 16px;
+	text-transform: capitalize;
+}
+#menu li:hover ul.sub-menus {
+	display: block
+}
+#menu ul.sub-menus a:hover{
+	background: #D4AD52;
+	color: #444444;
+}
+@media screen and (max-width: 800px){
+	#menu {position:relative}
+	#menu ul {background:#B9863A;position:absolute;top:100%;right:0;left:0;z-index:3;height:auto;display:none;text-align:left;}
+	#menu ul.sub-menus {width:100%;position:static;}
+	#menu ul.sub-menus a {padding-left:30px;}
+	#menu li {display:block;float:none;width:auto;}
+	#menu input, #menu label {position:absolute;top:0;left:0;display:block}
+	#menu input {z-index:4}
+	#menu input:checked + label {color:#565195}
+	#menu input:checked + label:before {content:"\00d7"}
+	#menu input:checked ~ ul {display:block}
+}
+/*ocultar formularios*/
+.form-container {
+            display: none;
+            margin-top: 100px;
+        }
+        h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #D5A30E;
+        } 
+ .form-container input[type="text"] {
+    text-align: center;
+    border: none; /* Elimina el borde */
+     /* Hace el fondo transparente */
+    outline: none; /* Elimina el contorno al enfocar */
+    margin-top: 20px;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    color: black;
+    outline: none;
+}
+/*Estilos para los botones*/
+.form-container button {
+  
+  font-family: arial;
+  color: #14396A !important;
+  font-size: 14px;
+  text-shadow: 1px 1px 0px #7CACDE;
+  box-shadow: 3px 3px 4px #D3A2F9;
+  padding: 14px 31px;
+  border-radius: 10px;
+  border: 0px solid #3866A3;
+  background: #A4EEEE;
+  background: linear-gradient(to top, #A4EEEE, #C9CF93);
+  margin-top: 50px;
+}
+.form-container button:hover {
+  color: #14396A !important;
+  background: #CFA20C;
+  background: linear-gradient(to top, #CFA20C, #EE8383);
+}        
+        .formularios{
+            position: center;
+            top: 5000%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 300px; /* Ajusta el ancho del formulario según tus necesidades */
+            margin: 0 auto; /* Centra horizontalmente el formulario */
+            
+            
+        }
+ 
