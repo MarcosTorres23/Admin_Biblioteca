@@ -1,0 +1,130 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 5 may 2024, 19:27:51
+    Author     : User
+*/
+/* Estilos generales */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+/* Centrar la lista en la página */
+ul {
+  
+    list-style: none;
+    width: 10px; /* Ancho deseado para la lista */
+    margin: 55%; /* Centra la lista horizontalmente */
+    position: absolute;
+    top: -75%; /* Centra la lista verticalmente */
+    transform: translateY(50%);
+    transform: translatex(-350%);
+    
+}
+img{
+    margin: 68%; /* Centra  zontalmente */
+    position: absolute;
+    top: -94%; /* Centra verticalmente */
+    transform: translatex(-117%);
+}
+/* Estilos para los elementos de la lista (li) */
+li {
+    font-family: cursive;
+    margin-bottom: 0px;
+    font-size: 40px;
+    
+    
+}
+
+
+/* Estilos para los enlaces (a) */
+a {
+    
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+    
+   
+}
+
+a:hover {
+    color: #CD8719;
+    
+}
+
+    
+    /*   //logo  animacion// */
+
+   @import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap");
+
+svg {
+	font-family: "Rufina", sans-serif;
+	width: 100%; height: 100%;
+        
+        background-image: url(imag/2.jpg); /* Ruta a tu imagen */
+   
+
+}
+svg text {
+	animation: stroke 8s infinite alternate;
+	stroke-width: 2;
+	stroke: #CD8719;
+	font-size: 53px;
+}
+@keyframes stroke {
+	0%   {
+		fill: rgba(144,85,8,0); stroke: rgba(205,135,25,1);
+		stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+	}
+	70%  {fill: rgba(144,85,8,0); stroke: rgba(205,135,25,1); }
+	80%  {fill: rgba(144,85,8,0); stroke: rgba(205,135,25,1); stroke-width: 3; }
+	100% {
+		fill: rgba(144,85,8,1); stroke: rgba(205,135,25,0);
+		stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+	}
+}
+.wrapper {background-color: #FFFFFF};
+/*carga*/
+.custom-loader {
+    width: 50px;
+    height: 50px;
+    display: grid;
+}
+.custom-loader::before,
+.custom-loader::after {    
+    content:"";
+    grid-area: 1/1;
+    --c: radial-gradient(farthest-side,#EB9FF4 92%,#0000);
+    background: 
+      var(--c) 50%  0, 
+      var(--c) 50%  100%, 
+      var(--c) 100% 50%, 
+      var(--c) 0    50%;
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    animation: s2 2s infinite;
+}
+.custom-loader::before {
+  margin:4px;
+  filter:hue-rotate(45deg);
+  background-size: 8px 8px;
+  animation-timing-function: linear
+}
+
+@keyframes s2{ 
+  100%{transform: rotate(.5turn)}
+}
+
+/*///////////Foother /////////////// */
+
+
+
+

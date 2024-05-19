@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú desplegable</title>
+  <link rel="stylesheet" href="styles/csshome.css">
+  <script src="jshome.js"></script>
+</head>
+<header>
+     <div class="wrapper">
+	<svg>
+		<text x="50%" y="50%" dy=".35em" text-anchor="middle">
+			Gestion Libreria
+		</text>
+	</svg>
+      </div> 
+</header>
+   
+ 
+       
+<body>
+    
+    <header><h1> Bienvenido, ¿Que haremos Hoy?</h1></header>
+    
+  
+   <nav id="menu">
+        <input type="checkbox" id="responsive-menu" onclick="updatemenu()"><label></label>
+        <ul>
+            <li><a class="dropdown-arrow">Registrar</a>
+                <ul class="sub-menus">
+                    <li><a onclick="showForm('nuevoLibro')">Nuevo Libro</a></li>
+                    <li><a onclick="showForm('nuevoCliente')">Nuevo Cliente</a></li>
+                </ul>
+            </li>
+            <li><a class="dropdown-arrow">Eliminar</a>
+                <ul class="sub-menus">
+                    <li><a onclick="showForm('dlibro')">Eliminar Libro</a></li>
+                    <li><a onclick="showForm('dcliente')">Eliminar Cliente</a></li>
+                </ul>
+            </li>
+            <li><a class="dropdown-arrow">Editar</a>
+                <ul class="sub-menus">
+                    <li><a onclick="showForm('edcliente')">Editar Cliente</a></li>
+                </ul>
+            </li>
+            <li><a class="dropdown-arrow">Buscar</a>
+                <ul class="sub-menus">
+                    <li><a href='http://localhost:8383/Proyecto_Libreria/filtro.html'> Fitrar Libros</a></li>
+                </ul>
+            </li>
+            <!-- ... (otros elementos del menú) ... -->
+        </ul>
+    </nav>
+
+    <!-- Formularios -->
+    <div class="formularios">
+    <div class="form-container" id="nuevoCliente">
+       <h2>Registrar Cliente</h2>
+       <h3>
+                        <input type="text" placeholder="Nombre" name="nombre">
+                        <input type="text" placeholder="Apellido" name="apellido">
+                        <input type="text" placeholder="Correo" name="correo">
+                        <input type="text" placeholder="Direccion" name="direccion">
+                        <input type="text" placeholder="Nro. Celular" name="celular">
+                        <button>Registrar</button>
+                        </h3>
+
+    </div>
+   
+    <div class="form-container" id="nuevoLibro">
+        <h2>Registrar Libro</h2>
+        <h3>
+                        <input type="text" placeholder="Titulo" name="titulo">
+                        <input type="text" placeholder="Genero" name="genero">
+                        <input type="text" placeholder="Autor" name="autor">
+                        <input type="text" placeholder="Editorial" name="direccion">
+                        <input type="text" placeholder="Descripcion" name="descricion">
+                        <button>Registrar</button>
+                         </h3>
+    </div>
+    <div class="form-container" id="dlibro">
+        <h2>Eliminar Libro</h2>
+        <h3>
+                        <input type="text" placeholder="Titulo" name="titulo">
+                        <input type="text" placeholder="id del libro" name="id_libro">
+                        <button>Eliminar</button>
+                         </h3>
+    </div>
+    <div class="form-container" id="dcliente">
+        <h2>Eliminar Cliente</h2>
+        <h3>
+                        <input type="text" placeholder="Nombre" name="nombre">
+                        <input type="text" placeholder="id del Cliente" name="id_cliente">
+                        <button>Eliminar</button>
+                        </h3>
+    </div>
+    <div class="form-container" id="dlibro">
+        <h2>Eliminar Libro</h2>
+        <h3>
+                        <input type="text" placeholder="Nombre" name="nombre">
+                        <input type="text" placeholder="id del Libro" name="id_libro">
+                        <button>Eliminar</button>
+                        </h3>
+    </div>
+   <div class="form-container" id="edcliente">
+       <h2>Editar Cliente</h2>
+       <h3>
+       
+                        <input type="text" placeholder="Nombre" name="nombre">
+                        <input type="text" placeholder="Apellido" name="apellido">
+                        <input type="text" placeholder="Correo" name="correo">
+                        <input type="text" placeholder="Direccion" name="direccion">
+                        <input type="text" placeholder="Nro. Celular" name="celular">
+                        <button>Buscar</button>
+                        <button>Editar</button>
+                        </h3>
+                       
+    </div>
+   
+  
+
+    <script src="jshome.js"></script>
+    </div>
+    
+</body>
+   
+</html>

@@ -1,0 +1,95 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 6 may 2024, 21:29:58
+    Author     : User
+*/
+
+/*///////Formulario Filtro /////// */
+body {
+    background-image: url(images/bg6.jpg);
+    background-size: cover;
+  /* Evita que la imagen se repita */
+    background-repeat: no-repeat;
+  /* Ajusta la altura del elemento para que sea igual a la del viewport */
+     height: 100vh;
+}
+.form-container {   
+            margin-top: 100px;
+            max-width: 300px; /* Ajusta el ancho del formulario según tus necesidades */
+            margin: 0 auto;
+        }
+ h2{
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #10898D;
+    font-family: 'comic sans ms';
+background: #4674FF;
+background: linear-gradient(to left, #4674FF 0%, #000000 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+    
+        } 
+        
+        h4{
+    font-size: 35px;
+    margin-bottom: 20px;
+    font-family: 'comic sans ms';
+background: #4674FF;
+background: linear-gradient(to left, #4674FF 0%, #000000 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+;
+
+        }
+        
+ .form-container input[type="text"] {
+     margin-top: 100px;
+    text-align: center;
+    border: none; /* Elimina el borde */
+     /* Hace el fondo transparente */
+    outline: none; /* Elimina el contorno al enfocar */
+    margin-top: 20px;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    color: black;
+    outline: none;
+}
+/*Estilos para los botones*/
+.form-container button {
+  
+  font-family: arial;
+  color: #14396A !important;
+  font-size: 14px;
+  text-shadow: 1px 1px 0px #7CACDE;
+  box-shadow: 3px 3px 4px #D3A2F9;
+  padding: 14px 31px;
+  border-radius: 10px;
+  border: 0px solid #3866A3;
+  background: #A4EEEE;
+  background: linear-gradient(to top, #A4EEEE, #C9CF93);
+  margin-top: 50px;
+}
+.form-container button:hover {
+  color: #14396A !important;
+  background: #CFA20C;
+  background: linear-gradient(to top, #CFA20C, #EE8383);
+}        
+        .formularios{
+            position: center;
+            top: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 300px; /* Ajusta el ancho del formulario según tus necesidades */
+            margin: 0 auto; /* Centra horizontalmente el formulario */
+            
+            
+        }
+ 
