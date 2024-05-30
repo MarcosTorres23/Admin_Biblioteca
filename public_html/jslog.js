@@ -49,12 +49,7 @@ async function login() {
             const result = await response.json();
             
             if (response.ok) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Éxito',
-                    text: result.message,
-                    confirmButtonText: 'Ok'
-                });
+               window.location.href = "home.html";
             } else {
                 Swal.fire({
                     icon: 'error',
