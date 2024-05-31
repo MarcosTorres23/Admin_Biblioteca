@@ -117,6 +117,7 @@ function userRegister(event) {
                 title: 'Registro exitoso',
                 text: 'Tu cuenta ha sido creada exitosamente.',
             });
+            limpiarCamposRegistro();
         } else {
             Swal.fire({
                 icon: 'error',
@@ -182,4 +183,11 @@ function register() {
         caja_trasera_login.style.display = "block";
         caja_trasera_login.style.opacity = "1";
     }
+}
+
+function limpiarCamposRegistro() {
+    document.getElementById('regName').value = ''; 
+    document.getElementById('regEmail').value = ''; 
+    document.getElementById('regUser').value = ''; 
+    document.getElementById('regPass').value = ''; 
 }

@@ -27,8 +27,8 @@ function showForm(formId) {
         selectedForm.style.display = 'block';
     }
 }
-function fetchFun (infoData){
-  fetch('http://localhost:3000/registerCustomer', {
+function fetchFun (infoData, url){
+  fetch(url, {
          method: 'POST',
          headers: {
              'Content-Type': 'application/json'
@@ -40,9 +40,10 @@ function fetchFun (infoData){
          if (data.success) {
              Swal.fire({
                  icon: 'success',
-                 title: 'Registro exitoso',
-                 text: 'El registro ha sido insertado exitosamente.',
+                 title: 'success',
+                 text: 'Acción realizada exitosamente.',
              });
+             limpiarCampos();
          } else {
              Swal.fire({
                  icon: 'error',
@@ -74,7 +75,7 @@ function registrarCliente(event) {
          direc: dirReg,
          cel : celReg
      };
-     fetchFun(customerData);
+     fetchFun(customerData, 'http://localhost:3000/registerCustomer');
  }
  function registrarLibro(event) { 
   var titReg = document.getElementById('regTittle').value;
@@ -89,5 +90,41 @@ function registrarCliente(event) {
       edit: ediReg,
       desc : descReg
   };
-  fetchFun(libroData);
+  fetchFun(libroData, 'http://localhost:3000/registerBook');
+}
+function eliminarLibro(){
+  var titDel = document.getElementById('delTittle').value;
+  var idDel = document.getElementById('delIdBook').value;
+   var deleteLibro = {
+      tit: titDel,
+      id: idDel
+   }
+   fetchFun(deleteLibro, 'http://localhost:3000/deleteBook');
+}
+
+function eliminarCliente(){
+  var nameDel = document.getElementById('delName').value;
+  var idDel = document.getElementById('delIdCliente').value;
+   var deleteCliente = {
+      nam: nameDel,
+      id: idDel
+   }
+   fetchFun(deleteCliente, 'http://localhost:3000/deleteCustomer');
+}
+
+function limpiarCampos() {
+  document.getElementById('regNom').value = '';
+  document.getElementById('regApe').value = '';
+  document.getElementById('regMail').value = '';
+  document.getElementById('regDir').value = '';
+  document.getElementById('regCel').value = '';
+  document.getElementById('regTittle').value = '';
+  document.getElementById('regGen').value = '';
+  document.getElementById('regAut').value = '';
+  document.getElementById('regedi').value = '';
+  document.getElementById('regDesc').value = '';
+  document.getElementById('delName').value = '';
+  document.getElementById('delIdCliente').value = '';
+  document.getElementById('delTittle').value = '';
+  document.getElementById('delIdBook').value = '';
 }

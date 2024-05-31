@@ -61,7 +61,7 @@
                 <h3>
                         <input id="regNom" type="text" placeholder="Nombre" name="nombre" required>
                         <input id="regApe" type="text" placeholder="Apellido" name="apellido" required>
-                        <input id="regMail" type="text" placeholder="Correo" name="correo" required>
+                        <input id="regMail" type="email" placeholder="Correo" name="correo" required>
                         <input id="regDir" type="text" placeholder="Direccion" name="direccion" required>
                         <input id="regCel" type="text" placeholder="Nro. Celular" name="celular" required>
                         <button onclick="registrarCliente()">Registrar</button>
@@ -87,7 +87,7 @@
         <h3>
                         <input id="delTittle"  type="text" placeholder="Titulo" name="titulo" required>
                         <input  id="delIdBook" type="text" placeholder="id del libro" name="id_libro" required>
-                        <button>Eliminar</button>
+                        <button onclick="eliminarLibro()">Eliminar</button>
                          </h3>
     </div>
     <div class="form-container" id="dcliente">
@@ -95,7 +95,7 @@
         <h3>
                         <input  id="delName" type="text" placeholder="Nombre" name="nombre" required>
                         <input  id="delIdCliente" type="text" placeholder="id del Cliente" name="id_cliente" required>
-                        <button>Eliminar</button>
+                        <button onclick="eliminarCliente()">Eliminar</button>
                         </h3>
     </div>
    <div class="form-container" id="edcliente">
@@ -107,8 +107,8 @@
                         <input id="updEmail"  type="text" placeholder="Correo" name="correo" required>
                         <input  id="updDire" type="text" placeholder="Direccion" name="direccion" required>
                         <input  id="updCel" type="text" placeholder="Nro. Celular" name="celular" required>
-                        <button>Buscar</button>
-                        <button>Editar</button>
+                        <button  id="buscarBtn">Buscar</button>
+                        <button id="editarBtn" disabled>Editar</button>
                         </h3>
                        
     </div>

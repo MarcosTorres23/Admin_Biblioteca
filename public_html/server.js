@@ -40,7 +40,7 @@ app.post('/register', async (req, res) => {
 
   try {
     // Verifica si el usuario ya existe
-    const checkUser = await pool.query('SELECT * FROM users WHERE username = $1 OR email = $2', [user, correo]);
+    const checkUser = await pool.query('SELECT * FROM users WHERE username = $1  email = $2', [user, correo]);
 
     if (checkUser.rows.length > 0) {
       res.status(409).json({ success: false, message: 'El nombre de usuario o correo ya está en uso' });
@@ -70,7 +70,7 @@ app.post('/registerCustomer', async (req, res) => {
 });
 
 // endpoint para registrar libros
-app.post('/registerCustomer', async (req, res) => {
+app.post('/registerBook', async (req, res) => {
   const { tit, aut , gene, edit, desc } = req.body;
 
   try {
@@ -81,7 +81,29 @@ app.post('/registerCustomer', async (req, res) => {
     res.status(500).json({ success: false, message: 'Database error', error: err.message });
   }
 });
+// endpoint para eliminar libros
+app.post('/deleteBook', async (req, res) => {
+  const { tit, id } = req.body;
 
+  try {
+      await pool.query('DELETE FROM libros WHERE titulo = $1 and  id = $2', [tit, id]);
+      res.json({ success: true, message: 'Registro eliminado' });
+  } catch (err) {
+    res.status(500).json({ success: false, message: 'Database error', error: err.message });
+  }
+});
+
+// endpoint para eliminar clientes
+app.post('/deleteCustomer', async (req, res) => {
+  const { nam, id } = req.body;
+
+  try {
+      await pool.query('DELETE FROM cliente WHERE nombre = $1 and  id = $2', [nam, id]);
+      res.json({ success: true, message: 'Registro eliminado' });
+  } catch (err) {
+    res.status(500).json({ success: false, message: 'Database error', error: err.message });
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
