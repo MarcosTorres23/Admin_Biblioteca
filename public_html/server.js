@@ -56,6 +56,32 @@ app.post('/register', async (req, res) => {
     res.status(500).json({ success: false, message: 'Database error', error: err.message });
   }
 });
+// endpoint para registrar clientes
+app.post('/registerCustomer', async (req, res) => {
+  const { name, apel , mail, direc, cel } = req.body;
+
+  try {
+      // Inserta el nuevo cliente
+      await pool.query('INSERT INTO cliente (nombre, apellido, documento, direccion, mail, celular, estado) VALUES ($1, $2, $3, $4, $5, $6, $7)', [name, apel, '111', direc, mail, cel, 'A']);
+      res.json({ success: true, message: 'Registro exitoso' });
+  } catch (err) {
+    res.status(500).json({ success: false, message: 'Database error', error: err.message });
+  }
+});
+
+// endpoint para registrar libros
+app.post('/registerCustomer', async (req, res) => {
+  const { tit, aut , gene, edit, desc } = req.body;
+
+  try {
+      // Inserta el nuevo libro
+      await pool.query('INSERT INTO libros (titulo, autor, genero, editorial, descripcion) VALUES ($1, $2, $3, $4, $5)', [tit, aut, gene, edit, desc]);
+      res.json({ success: true, message: 'Registro exitoso' });
+  } catch (err) {
+    res.status(500).json({ success: false, message: 'Database error', error: err.message });
+  }
+});
+
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
