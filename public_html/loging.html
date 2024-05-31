@@ -5,53 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Login</title>
     <!-- Asegúrate de vincular tu archivo CSS aquí para estilizar el formulario -->
-   <link rel="stylesheet" href ="styles/logcss.css">
-
+    <link rel="stylesheet" href="styles/logcss.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 
 <body>
-
-        <main>
-
-            <div class="contenedor__todo">
-                <div class="caja__trasera">
-                    <div class="caja__trasera-login">
-                        <h3>¿Ya tienes una cuenta?</h3>
-                        <p>Inicia sesión para entrar en la página</p>
-                        <button id="btn__iniciar-sesion">Iniciar Sesión</button>
-                    </div>
-                    <div class="caja__trasera-register">
-                        <h3>¿Aún no tienes una cuenta?</h3>
-                        <p>Regístrate para que puedas iniciar sesión</p>
-                        <button id="btn__registrarse">Regístrarse</button>
-                    </div>
+    <main>
+        <div class="contenedor__todo">
+            <div class="caja__trasera">
+                <div class="caja__trasera-login">
+                    <h3>¿Ya tienes una cuenta?</h3>
+                    <p>Inicia sesión para entrar en la página</p>
+                    <button id="btn__iniciar-sesion">Iniciar Sesión</button>
                 </div>
-
-                <!--Formulario de Login y registro-->
-                <div class="contenedor__login-register">
-                    <!--Login-->
-                    <form action="" class="formulario__login">
-                        <h2>Iniciar Sesión</h2>
-                        <input type="text" placeholder="Usuario">
-                        <input type="password" placeholder="Contraseña">
-                        <button>Entrar</button>
-                    </form>
-
-                    <!--Register-->
-                    <form action="" class="formulario__register">
-                        <h2>Regístrarse</h2>
-                        <input type="text" placeholder="Nombre completo">
-                        <input type="text" placeholder="Correo Electronico">
-                        <input type="text" placeholder="Usuario">
-                        <input type="password" placeholder="Contraseña">
-                        <button>Regístrarse</button>
-                    </form>
+                <div class="caja__trasera-register">
+                    <h3>¿Aún no tienes una cuenta?</h3>
+                    <p>Regístrate para que puedas iniciar sesión</p>
+                    <button id="btn__registrarse">Regístrarse</button>
                 </div>
             </div>
 
-        </main>
+            <!--Formulario de Login y registro-->
+            <div class="contenedor__login-register">
+                <!--Login-->
+                <form action="" class="formulario__login" onsubmit="event.preventDefault(); login();">
+                    <h2>Iniciar Sesión</h2>
+                    <input id="user" type="text" placeholder="Usuario">
+                    <input id="pass" type="password" placeholder="Contraseña">
+                    <button type="submit">Entrar</button>
+                </form>
 
-        <script src="jslog.js"></script>
+                <!--Register-->
+                <form class="formulario__register" onsubmit="event.preventDefault(); userRegister();">
+                    <h2>Regístrarse</h2>
+                    <input id="regName" type="text" placeholder="Nombre completo" required>
+                    <input id="regEmail" type="email" placeholder="Correo Electronico" required>
+                    <input id="regUser" type="text" placeholder="Usuario" required>
+                    <input id="regPass" type="password" placeholder="Contraseña" required>
+                    <button type="submit">Regístrarse</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="jslog.js"></script>
 </body>
-
 </html>
