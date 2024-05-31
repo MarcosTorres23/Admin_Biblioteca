@@ -36,13 +36,13 @@
                 </form>
 
                 <!--Register-->
-                <form action="" class="formulario__register">
+                <form class="formulario__register" onsubmit="event.preventDefault(); userRegister();">
                     <h2>Regístrarse</h2>
-                    <input type="text" placeholder="Nombre completo">
-                    <input type="text" placeholder="Correo Electronico">
-                    <input type="text" placeholder="Usuario">
-                    <input type="password" placeholder="Contraseña">
-                    <button>Regístrarse</button>
+                    <input id="regName" type="text" placeholder="Nombre completo" required>
+                    <input id="regEmail" type="email" placeholder="Correo Electronico" required>
+                    <input id="regUser" type="text" placeholder="Usuario" required>
+                    <input id="regPass" type="password" placeholder="Contraseña" required>
+                    <button type="submit">Regístrarse</button>
                 </form>
             </div>
         </div>

@@ -15,15 +15,15 @@ function updatemenu() {
   }
 }
 function showForm(formId) {
-            // Oculta todos los formularios
-            const forms = document.querySelectorAll('.form-container');
-            forms.forEach(form => {
-                form.style.display = 'none';
-            });
+    // Oculta todos los formularios
+    const forms = document.querySelectorAll('.form-container');
+    forms.forEach(form => {
+        form.style.display = 'none';
+    });
 
-            // Muestra el formulario correspondiente al formId
-            const selectedForm = document.getElementById(formId);
-            if (selectedForm) {
-                selectedForm.style.display = 'block';
-            }
-        }
+    // Muestra el formulario correspondiente al formId
+    const selectedForm = document.getElementById(formId);
+    if (selectedForm) {
+        selectedForm.style.display = 'block';
+    }
+}

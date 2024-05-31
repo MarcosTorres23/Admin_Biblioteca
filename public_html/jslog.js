@@ -69,6 +69,72 @@ async function login() {
     }
 }
 
+function userRegister(event) {
+   // event.preventDefault(); // Prevenir el envío del formulario por defecto
+
+    var userReg = document.getElementById('regUser').value;
+    var nameReg = document.getElementById('regName').value;
+    var emailReg = document.getElementById('regEmail').value;
+    var passReg = document.getElementById('regPass').value;
+
+    // Validación del formato de correo electrónico
+   /* var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailReg.match(emailPattern)) {
+        alert('Por favor, ingrese un correo electrónico válido.');
+        return;
+    }*/
+
+     // Validación de la contraseña (al menos una letra mayúscula, un número y 8 caracteres)
+     var passPattern = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+     if (!passReg.match(passPattern)) {
+         Swal.fire({
+             icon: 'error',
+             title: 'Contraseña inválida',
+             text: 'La contraseña debe tener al menos 8 caracteres, incluir una letra mayúscula y un número.',
+         });
+         return;
+     }
+
+    var userData = {
+        user: userReg,
+        nombre: nameReg,
+        correo: emailReg,
+        pass: passReg
+    };
+    
+    fetch('http://localhost:3000/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Registro exitoso',
+                text: 'Tu cuenta ha sido creada exitosamente.',
+            });
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error en el registro',
+                text: 'Error en el registro: ' + data.message,
+            });
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        Swal.fire({
+            icon: 'error',
+            title: 'Error en el registro',
+            text: 'Error en el registro. Por favor, intente de nuevo más tarde.',
+        });
+    });
+}
+
 function anchoPage() {
     if (window.innerWidth > 850) {
         caja_trasera_register.style.display = "block";
