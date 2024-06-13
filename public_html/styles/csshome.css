@@ -18,6 +18,17 @@ h1 {
  
     
 }
+h6{
+    font-size: 14px;
+}
+.salir{
+    width: 50px;tamaño del contenedor
+}
+.salir img{
+    width: 100%; la imagen ocupara el ancho indicado
+    height: auto; altura se ajusta automaticamente
+}
+
 body {
     background-image: url(images/bg5.jpg);
     background-size: cover;
@@ -175,6 +186,19 @@ svg text {
     color: black;
     outline: none;
 }
+ .form-container input[type="email"] {
+    text-align: center;
+    border: none; /* Elimina el borde */
+     /* Hace el fondo transparente */
+    outline: none; /* Elimina el contorno al enfocar */
+    margin-top: 20px;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    color: black;
+    outline: none;
+}
+
 /*Estilos para los botones*/
 .form-container button {
   
