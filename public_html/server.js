@@ -40,7 +40,7 @@ app.post('/register', async (req, res) => {
 
   try {
     // Verifica si el usuario ya existe
-    const checkUser = await pool.query('SELECT * FROM users WHERE username = $1  email = $2', [user, correo]);
+    const checkUser = await pool.query('SELECT * FROM users WHERE username = $1 OR email = $2', [user, correo]);
 
     if (checkUser.rows.length > 0) {
       res.status(409).json({ success: false, message: 'El nombre de usuario o correo ya está en uso' });
