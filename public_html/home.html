@@ -1,123 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menú desplegable</title>
-  <link rel="stylesheet" href="styles/csshome.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-  <script src="jshome.js"></script>
-</head>
-<header>
-     <div class="wrapper">
-	<svg>
-		<text x="50%" y="50%" dy=".35em" text-anchor="middle">
-			Gestion Libreria
-		</text>
-	</svg>
-      </div> 
-</header>
-   
- 
-       
-<body>
-    
-    <header><h1> Bienvenido, ¿Que haremos Hoy?</h1></header>
-    
-  
-   <nav id="menu">
-        <input type="checkbox" id="responsive-menu" onclick="updatemenu()"><label></label>
-        <ul>
-            <li><a class="dropdown-arrow">Registrar</a>
-                <ul class="sub-menus">
-                    <li><a onclick="showForm('nuevoLibro')">Nuevo Libro</a></li>
-                    <li><a onclick="showForm('nuevoCliente')">Nuevo Cliente</a></li>
-                </ul>
-            </li>
-            <li><a class="dropdown-arrow">Eliminar</a>
-                <ul class="sub-menus">
-                    <li><a onclick="showForm('dlibro')">Eliminar Libro</a></li>
-                    <li><a onclick="showForm('dcliente')">Eliminar Cliente</a></li>
-                </ul>
-            </li>
-            <li><a class="dropdown-arrow">Editar</a>
-                <ul class="sub-menus">
-                    <li><a onclick="showForm('edcliente')">Editar Cliente</a></li>
-                </ul>
-            </li>
-            <li><a class="dropdown-arrow">Buscar</a>
-                <ul class="sub-menus">
-                    <li><a href='http://localhost:8383/Proyecto_Libreria/filtro.html'> Fitrar Libros</a></li>
-                </ul>
-            </li>
-            <!-- ... (otros elementos del menú) ... -->
-        </ul>
-    </nav>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menú desplegable</title>
+        <link rel="stylesheet" href="styles/csshome.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+        <script src="jshome.js"></script>
+    </head>
+    <header>
+        <div class="wrapper">
+            <svg>
+            <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+            Gestion Libreria
+            </text>
+            </svg>
+        </div> 
 
-    <!-- Formularios -->
-    <div class="formularios">
-    <div class="form-container" id="nuevoCliente">
+        <!<!-- Boton de cerrar sesion -->
+        <div class="salir">
+            <a href="http://localhost:8383/Admin_Biblioteca-main/loging.html">
+                <img src="styles/imag/exit.jpg" alt="Cerrar Sesion">
+            </a>
+        </div>
+        <h6>Cerrar sesion</h6>
+    </header>
+
+
+
+    <body>
+
+        <header><h1> Bienvenido, ¿Que haremos Hoy?</h1></header>
+
+        <!<!-- Menu de desplasamiento -->
+        <nav id="menu">
+            <input type="checkbox" id="responsive-menu" onclick="updatemenu()"><label></label>
+            <ul>
+                <li><a class="dropdown-arrow">Registrar</a>
+                    <ul class="sub-menus">
+                        <li><a onclick="showForm('nuevoLibro')">Nuevo Libro</a></li>
+                        <li><a onclick="showForm('nuevoCliente')">Nuevo Cliente</a></li>
+                    </ul>
+                </li>
+                <li><a class="dropdown-arrow">Eliminar</a>
+                    <ul class="sub-menus">
+                        <li><a onclick="showForm('dlibro')">Eliminar Libro</a></li>
+                        <li><a onclick="showForm('dcliente')">Eliminar Cliente</a></li>
+                    </ul>
+                </li> 
+                <li><a class="dropdown-arrow">Buscar</a>
+                    <ul class="sub-menus">
+                        <li><a href='http://localhost:8383/Admin_Biblioteca-main/filtro.html'> Fitrar Libros</a></li>
+                    </ul>
+                </li>
+                <!-- ... (otros elementos del menú) ... -->
+            </ul>
+        </nav>
+
+        <!-- Formularios -->
+
+        <!-- Contenedores de formularios -->
+        <div class="formularios">
+            <div class="form-container" id="nuevoCliente">
                 <h2>Registrar Cliente</h2>
+
+                <h3>   
+                    <input id="regNom" type="text" placeholder="Nombre" name="nombre" required>
+                    <input id="regApe" type="text" placeholder="Apellido" name="apellido" required> 
+                    <input id="regDir" type="text" placeholder="Direccion" name="direccion" required>
+                    <input id="regCel" type="text" placeholder="Nro. Celular" name="celular" required>
+                    <input id="regMail" type="email" placeholder="Correo" name="correo" required>          
+                </h3>
+                <button onclick="registrarCliente()">Registrar</button>
+            </div>
+
+            <div class="form-container" id="nuevoLibro">
+                <h2>Registrar Libro</h2>
                 <h3>
-                        <input id="regNom" type="text" placeholder="Nombre" name="nombre" required>
-                        <input id="regApe" type="text" placeholder="Apellido" name="apellido" required>
-                        <input id="regMail" type="email" placeholder="Correo" name="correo" required>
-                        <input id="regDir" type="text" placeholder="Direccion" name="direccion" required>
-                        <input id="regCel" type="text" placeholder="Nro. Celular" name="celular" required>
-                        <button onclick="registrarCliente()">Registrar</button>
-                    </h3>
 
-    </div>
-   
-    <div class="form-container" id="nuevoLibro">
-        <h2>Registrar Libro</h2>
-        <h3>
+                    <input id="regTittle" type="text" placeholder="Titulo" name="titulo" required>
+                    <input id="regGen" type="text" placeholder="Genero" name="genero" required>
+                    <input id="regAut" type="text" placeholder="Autor" name="autor" required>
+                    <input id="regedi" type="text" placeholder="Editorial" name="direccion" required>
+                    <input id="regDesc" type="text" placeholder="Descripcion" name="descricion" required>
+                    <button onclick="registrarLibro()">Registrar</button>
+                </h3>
 
-                        <input id="regTittle" type="text" placeholder="Titulo" name="titulo" required>
-                        <input id="regGen" type="text" placeholder="Genero" name="genero" required>
-                        <input id="regAut" type="text" placeholder="Autor" name="autor" required>
-                        <input id="regedi" type="text" placeholder="Editorial" name="direccion" required>
-                        <input id="regDesc" type="text" placeholder="Descripcion" name="descricion" required>
-                        <button onclick="registrarLibro()">Registrar</button>
-                         </h3>
+            </div>
+            <div class="form-container" id="dlibro">
+                <h2>Eliminar Libro</h2>
+                <h3>
+                    <input id="delTittle"  type="text" placeholder="Titulo" name="titulo" required>
+                    <input  id="delIdBook" type="text" placeholder="id del libro" name="id_libro" required>
+                    <button onclick="eliminarLibro()">Eliminar</button>
+                </h3>
+            </div>
+            <div class="form-container" id="dcliente">
+                <h2>Eliminar Cliente</h2>
+                <h3>
+                    <input  id="delName" type="text" placeholder="Nombre" name="nombre" required>
+                    <input  id="delIdCliente" type="text" placeholder="id del Cliente" name="id_cliente" required>
+                    <button onclick="eliminarCliente()">Eliminar</button>
+                </h3>
+            </div>
 
-    </div>
-    <div class="form-container" id="dlibro">
-        <h2>Eliminar Libro</h2>
-        <h3>
-                        <input id="delTittle"  type="text" placeholder="Titulo" name="titulo" required>
-                        <input  id="delIdBook" type="text" placeholder="id del libro" name="id_libro" required>
-                        <button onclick="eliminarLibro()">Eliminar</button>
-                         </h3>
-    </div>
-    <div class="form-container" id="dcliente">
-        <h2>Eliminar Cliente</h2>
-        <h3>
-                        <input  id="delName" type="text" placeholder="Nombre" name="nombre" required>
-                        <input  id="delIdCliente" type="text" placeholder="id del Cliente" name="id_cliente" required>
-                        <button onclick="eliminarCliente()">Eliminar</button>
-                        </h3>
-    </div>
-   <div class="form-container" id="edcliente">
-       <h2>Editar Cliente</h2>
-       <h3>
-       
-                        <input  id="updName" type="text" placeholder="Nombre" name="nombre" required>
-                        <input  id="updApe" type="text" placeholder="Apellido" name="apellido" required>
-                        <input id="updEmail"  type="text" placeholder="Correo" name="correo" required>
-                        <input  id="updDire" type="text" placeholder="Direccion" name="direccion" required>
-                        <input  id="updCel" type="text" placeholder="Nro. Celular" name="celular" required>
-                        <button  id="buscarBtn">Buscar</button>
-                        <button id="editarBtn" disabled>Editar</button>
-                        </h3>
-                       
-    </div>
-   
-  
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
-    <script src="jshome.js"></script>
-    </div>
-    
-</body>
-   
+
+
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+            <script src="jshome.js"></script>
+        </div>
+
+    </body>
+
 </html>
