@@ -105,7 +105,24 @@ app.post('/deleteCustomer', async (req, res) => {
   }
 });
 
+app.get('/getBooks', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM libros');
+    res.json(result.rows);
+  } catch (err) {
+    res.status(500).json({ success: false, message: 'Database error', error: err.message });
+  }
+});
+
+app.get('/getCustomers', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM cliente');
+    res.json(result.rows);
+  } catch (err) {
+    res.status(500).json({ success: false, message: 'Database error', error: err.message });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
-'`¡0p'

@@ -206,3 +206,6 @@ svg text {
     background-color: #a2c3c2;
     
   }
+  .hide {
+	display: none;
+  }
