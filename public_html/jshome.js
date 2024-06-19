@@ -128,3 +128,8 @@ function limpiarCampos() {
   document.getElementById('delTittle').value = '';
   document.getElementById('delIdBook').value = '';
 }
+
+function redirec(){
+    window.location.href = "filtro.html";
+  
+  }
