@@ -21,7 +21,7 @@
     <nav id="menu">
         <input type="checkbox" id="responsive-menu" onclick="updatemenu()"><label></label>
         <ul>
-            <li><a class="dropdown-arrow">Filtrar</a>
+            <li><a class="dropdown-arrow">Listar</a>
                 <ul class="sub-menus">
                     <li><a onclick="showForm('fclientes')">Clientes</a></li>
                     <li><a onclick="showForm('flibros')">Libros</a></li>
@@ -46,8 +46,8 @@
             <tbody></tbody>
         </table>
         <input class="hide" type="text" placeholder="Titulo" name="fillibro">
-        <button onclick="fetchBooks()">Filtrar</button>
-        <button onclick="actualizarlibros()">Actualizar</button>
+        <button onclick="fetchBooks()">Buscar</button>
+        <button class="hide"  onclick="actualizarlibros()">Actualizar</button>
     </div>
 
     <div class="form-container" id="fclientes" style="display:none;">
@@ -66,7 +66,7 @@
         </table>
         <input class="hide" type="text" placeholder="Nombre" name="filcliente">
         <button onclick="fetchCustomers()">Buscar</button>
-        <button onclick="actualizarCliente()">Actualizar</button>
+        <button class="hide"  onclick="actualizarCliente()">Actualizar</button>
     </div>
 
     <script src="jsfiltro.js"></script>

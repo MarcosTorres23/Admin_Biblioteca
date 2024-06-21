@@ -133,3 +133,7 @@ function redirec(){
     window.location.href = "filtro.html";
   
   }
+  function goToLogin(){
+    window.location.href = "loging.html";
+  
+  }
