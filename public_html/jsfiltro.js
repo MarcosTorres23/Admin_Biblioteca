@@ -25,3 +25,40 @@ function showForm(formId) {
         selectedForm.style.display = 'block';
     }
 }
+//por medio del servidor realiza la consulta para obtener los libros
+function fetchBooks() {
+  fetch('http://localhost:3000/getBooks')
+    .then(response => response.json())
+    .then(data => {
+      const librosTable = document.getElementById('librosTable').getElementsByTagName('tbody')[0];
+      librosTable.innerHTML = '';
+      data.forEach(book => {
+        const row = librosTable.insertRow();
+        row.insertCell(0).innerText = book.titulo;
+        row.insertCell(1).innerText = book.genero;
+        row.insertCell(2).innerText = book.autor;
+        row.insertCell(3).innerText = book.editorial;
+        row.insertCell(4).innerText = book.descripcion;
+        row.insertCell(5).innerText = book.estado || 'Disponible';
+      });
+    })
+    .catch(error => console.error('Error fetching books:', error));
+}
+//por medio del servidor realiza la consulta para obtener los clientes
+function fetchCustomers() {
+  fetch('http://localhost:3000/getCustomers')
+    .then(response => response.json())
+    .then(data => {
+      const clientesTable = document.getElementById('clientesTable').getElementsByTagName('tbody')[0];
+      clientesTable.innerHTML = '';
+      data.forEach(customer => {
+        const row = clientesTable.insertRow();
+        row.insertCell(0).innerText = customer.nombre;
+        row.insertCell(1).innerText = customer.apellido;
+        row.insertCell(2).innerText = customer.direccion;
+        row.insertCell(3).innerText = customer.celular;
+        row.insertCell(4).innerText = customer.mail;
+      });
+    })
+    .catch(error => console.error('Error fetching customers:', error));
+}

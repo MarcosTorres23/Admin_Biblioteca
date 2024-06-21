@@ -1,130 +1,75 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
--->
 <html>
-    
-    
-    <head>
-        <title>Buscar</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href ="styles/cssfiltro.css">
-        
-        
-    </head>
+<head>
+    <title>Buscar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/cssfiltro.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body>
     <header>
-     <div class="wrapper">
-	<svg>
-		<text x="50%" y="50%" dy=".35em" text-anchor="middle">
-			Gestion Libreria
-		</text>
-	</svg>
-      </div> 
-</header>
-    
-    
-   
-    <body>
-        
-        
-        
-        <nav id="menu">
+        <div class="wrapper">
+            <svg>
+                <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+                    Gestion Libreria
+                </text>
+            </svg>
+        </div> 
+    </header>
+
+    <nav id="menu">
         <input type="checkbox" id="responsive-menu" onclick="updatemenu()"><label></label>
         <ul>
-            <li><a class="dropdown-arrow">Filtrar</a>
+            <li><a class="dropdown-arrow">Listar</a>
                 <ul class="sub-menus">
                     <li><a onclick="showForm('fclientes')">Clientes</a></li>
                     <li><a onclick="showForm('flibros')">Libros</a></li>
                 </ul>
             </li>
         </ul>
-        </nav>
-        
-         <div class="formularios">
-             <div class="form-container" id="flibros">
-                 
-                <h2> Filtro Libros</h2>
-  <table>
-  <thead>
-    <tr>
-      <th>Titulo</th>
-      <th>Genero</th>
-      <th>Autor</th>
-      <th>Editorial</th>
-      <th>Detalles</th>
-      <th>Estado</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Gatitos</td>
-      <td>Cuento</td>
-      <td>No se  </td>
-      <td> a </td>
-      <td> Gatitos con ropa y zapatitos</td>
-      <td>Reservado</td>
-    </tr>
-    
-  </tbody>
-</table>
-                <input type="text" placeholder="filtro" name="fillibro">
-                <button onclick="fitrarlibros()">Filtrar</button>
-                <button onclick="actualizarlibros()">Actualizar</button>
-                        
-                 
+    </nav>
 
-                        
-                        
+    <div class="form-container" id="flibros" style="display:none;">
+        <h2>Filtro Libros</h2>
+        <table id="librosTable">
+            <thead>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Genero</th>
+                    <th>Autor</th>
+                    <th>Editorial</th>
+                    <th>Detalles</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <input class="hide" type="text" placeholder="Titulo" name="fillibro">
+        <button onclick="fetchBooks()">Buscar</button>
+        <button class="hide"  onclick="actualizarlibros()">Actualizar</button>
     </div>
-             
-             <div class="form-container" id="fclientes">
-                <h2>Filtro Clientes </h2>           
-                                             
-  <table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Direccion</th>
-      <th>Celular</th>
-      <th>Correo</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Sol</td>
-      <td>Aguero</td>
-      <td>No se  uwu </td>
-      <td> :3 </td>
-      <td> asigua'u@xd.com</td>
-    </tr>
-    <tr>
-      <td>Marcos</td>
-      <td>Torres</td>   
-      <td>No se  uwu </td>
-      <td> 0_0 </td>
-      <td> pendex@xd.com</td>
-    </tr>
-    
-  </tbody>
-</table>
-                        <input type="text" placeholder="filtro" name="filcliente">
-                        <button onclick="buscarCliente()">Buscar</button>
-                        <button onclick="actualizarCliente()">Actualizar</button>   
-                        
-                  
-                
-                 
 
+    <div class="form-container" id="fclientes" style="display:none;">
+        <h2>Filtro Clientes</h2>
+        <table id="clientesTable">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Direccion</th>
+                    <th>Celular</th>
+                    <th>Correo</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <input class="hide" type="text" placeholder="Nombre" name="filcliente">
+        <button onclick="fetchCustomers()">Buscar</button>
+        <button class="hide"  onclick="actualizarCliente()">Actualizar</button>
     </div>
-             
-        <script src="jsfiltro.js"></script>
-        
-        
-        
-   
 
-    </body>
+    <script src="jsfiltro.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+</body>
 </html>

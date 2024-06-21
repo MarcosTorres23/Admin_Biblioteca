@@ -14,7 +14,7 @@ var caja_trasera_register = document.querySelector(".caja__trasera-register");
 async function login() {
     var user = document.getElementById('user').value;
     var pass = document.getElementById('pass').value;
-    
+    //validaciones de carga de datos
     if (user === '' && pass === '') {
         Swal.fire({
             icon: 'warning',
@@ -38,6 +38,7 @@ async function login() {
         });
     } else {
         try {
+            //llama al servidor para consultar a la base de datos
             const response = await fetch('http://localhost:3000/login', {
                 method: 'POST',
                 headers: {
@@ -77,13 +78,6 @@ function userRegister(event) {
     var emailReg = document.getElementById('regEmail').value;
     var passReg = document.getElementById('regPass').value;
 
-    // Validación del formato de correo electrónico
-   /* var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailReg.match(emailPattern)) {
-        alert('Por favor, ingrese un correo electrónico válido.');
-        return;
-    }*/
-
      // Validación de la contraseña (al menos una letra mayúscula, un número y 8 caracteres)
      var passPattern = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
      if (!passReg.match(passPattern)) {
@@ -101,7 +95,7 @@ function userRegister(event) {
         correo: emailReg,
         pass: passReg
     };
-    
+    //llama al servidor para insertar en base de datos
     fetch('http://localhost:3000/register', {
         method: 'POST',
         headers: {
