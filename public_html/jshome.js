@@ -14,6 +14,7 @@ function updatemenu() {
     document.getElementById('menu').style.borderRadius = '35px';
   }
 }
+
 function showForm(formId) {
     // Oculta todos los formularios
     const forms = document.querySelectorAll('.form-container');
@@ -27,6 +28,8 @@ function showForm(formId) {
         selectedForm.style.display = 'block';
     }
 }
+
+//metodo reutilizable para insertar o eliminar los registros en base de datos
 function fetchFun (infoData, url){
   fetch(url, {
          method: 'POST',
@@ -62,6 +65,7 @@ function fetchFun (infoData, url){
      });
 }
 
+// indicaciones para insertar cliente
 function registrarCliente(event) { 
      var nomReg = document.getElementById('regNom').value;
      var apeReg = document.getElementById('regApe').value;
@@ -77,6 +81,8 @@ function registrarCliente(event) {
      };
      fetchFun(customerData, 'http://localhost:3000/registerCustomer');
  }
+
+ // indicaciones para insertar libro
  function registrarLibro(event) { 
   var titReg = document.getElementById('regTittle').value;
   var genReg = document.getElementById('regGen').value;
@@ -92,6 +98,8 @@ function registrarCliente(event) {
   };
   fetchFun(libroData, 'http://localhost:3000/registerBook');
 }
+
+// indicaciones para eliminar libro
 function eliminarLibro(){
   var titDel = document.getElementById('delTittle').value;
   var idDel = document.getElementById('delIdBook').value;
@@ -102,6 +110,7 @@ function eliminarLibro(){
    fetchFun(deleteLibro, 'http://localhost:3000/deleteBook');
 }
 
+// indicaciones para eliminar cliente
 function eliminarCliente(){
   var nameDel = document.getElementById('delName').value;
   var idDel = document.getElementById('delIdCliente').value;
@@ -112,6 +121,7 @@ function eliminarCliente(){
    fetchFun(deleteCliente, 'http://localhost:3000/deleteCustomer');
 }
 
+//limpia los campos
 function limpiarCampos() {
   document.getElementById('regNom').value = '';
   document.getElementById('regApe').value = '';
@@ -129,6 +139,7 @@ function limpiarCampos() {
   document.getElementById('delIdBook').value = '';
 }
 
+//redirección de páginas
 function redirec(){
     window.location.href = "filtro.html";
   

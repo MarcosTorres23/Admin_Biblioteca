@@ -25,6 +25,7 @@ function showForm(formId) {
         selectedForm.style.display = 'block';
     }
 }
+//por medio del servidor realiza la consulta para obtener los libros
 function fetchBooks() {
   fetch('http://localhost:3000/getBooks')
     .then(response => response.json())
@@ -43,7 +44,7 @@ function fetchBooks() {
     })
     .catch(error => console.error('Error fetching books:', error));
 }
-
+//por medio del servidor realiza la consulta para obtener los clientes
 function fetchCustomers() {
   fetch('http://localhost:3000/getCustomers')
     .then(response => response.json())

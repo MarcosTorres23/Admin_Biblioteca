@@ -6,6 +6,7 @@ const { Pool } = require('pg');
 const app = express();
 const port = 3000;
 
+//credenciales de conexión a base de datos
 const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
@@ -56,6 +57,7 @@ app.post('/register', async (req, res) => {
     res.status(500).json({ success: false, message: 'Database error', error: err.message });
   }
 });
+
 // endpoint para registrar clientes
 app.post('/registerCustomer', async (req, res) => {
   const { name, apel , mail, direc, cel } = req.body;
@@ -81,6 +83,7 @@ app.post('/registerBook', async (req, res) => {
     res.status(500).json({ success: false, message: 'Database error', error: err.message });
   }
 });
+
 // endpoint para eliminar libros
 app.post('/deleteBook', async (req, res) => {
   const { tit, id } = req.body;
@@ -105,6 +108,7 @@ app.post('/deleteCustomer', async (req, res) => {
   }
 });
 
+// endpoint para obtener libros
 app.get('/getBooks', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM libros');
@@ -114,6 +118,7 @@ app.get('/getBooks', async (req, res) => {
   }
 });
 
+// endpoint para obtener clientes
 app.get('/getCustomers', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM cliente');
